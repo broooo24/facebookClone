@@ -1,7 +1,7 @@
 package com.example.demo.domain.entity;
 
 import javax.persistence.*;
-import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class PictureEntity {
@@ -12,7 +12,7 @@ public class PictureEntity {
     private int numberOfLike;
 
     @OneToMany
-    private ArrayList<CommentEntity> comments;
+    private List<CommentEntity> comments;
     @ManyToOne
     private UserEntity owner;
     private boolean isPublic;
@@ -49,11 +49,11 @@ public class PictureEntity {
         isPublic = aPublic;
     }
 
-    public ArrayList<CommentEntity> getComments() {
+    public List<CommentEntity> getComments() {
         return comments;
     }
 
-    public void setComments(ArrayList<CommentEntity> comments) {
+    public void setComments(List<CommentEntity> comments) {
         this.comments = comments;
     }
 

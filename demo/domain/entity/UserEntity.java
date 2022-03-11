@@ -26,7 +26,7 @@ public class UserEntity implements Serializable {
     @Column(nullable = false)
     private int countFriends;
     @OneToMany
-    private ArrayList<MessageEntity> message;
+    private List<MessageEntity> message;
 
     @ManyToMany(fetch = FetchType.EAGER)
     private List<RoleEntity> roleEntities;
@@ -95,7 +95,7 @@ public class UserEntity implements Serializable {
         this.countFriends = countFriends;
     }
 
-    public ArrayList<MessageEntity> getMessage() {
+    public List<MessageEntity> getMessage() {
         return message;
     }
 

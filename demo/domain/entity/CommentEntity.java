@@ -5,12 +5,17 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import javax.persistence.*;
 import javax.xml.crypto.Data;
+import java.util.Date;
 
 @Entity
 public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @ManyToOne
+    private UserEntity from;
+    private Date date;
+    private String content;
 
     public int getId() {
         return id;
@@ -28,11 +33,11 @@ public class CommentEntity {
         this.from = from;
     }
 
-    public Data getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(Data date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -44,8 +49,5 @@ public class CommentEntity {
         this.content = content;
     }
 
-    @ManyToOne
-    private UserEntity from;
-    private Data date;
-    private String content;
+
 }
